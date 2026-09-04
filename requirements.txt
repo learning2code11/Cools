@@ -3,3 +3,4 @@ uvicorn[standard]==0.35.0
 requests==2.32.5
 eth-utils==5.3.1
 feedparser==6.0.11
+eth-hash[pycryptodome]==0.8.0
