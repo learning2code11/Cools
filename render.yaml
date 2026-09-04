@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: robinhood-chain-early-radar
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: SCAN_SECONDS
+        value: 25
+      - key: BOOTSTRAP_BLOCKS
+        value: 12000
+      - key: MAX_TRACKED
+        value: 180
